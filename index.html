@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The STEM Collage — Spring Concert 2026 | STEM Middle Academy Band</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Emerald -> forest green spectrum */
+  --emerald:#0f9d6e;
+  --green:#0c7a52;
+  --green-deep:#0a5c3e;
+  --forest:#073d2a;
+  --green-soft:#e6f3ec;
+  --green-tint:#f3f9f5;
+  --accent:#15b886;       /* bright emerald highlight */
+  /* Gold spectrum — primary accent / highlights */
+  --gold:#c79a3a;
+  --gold-bright:#e3b54e;
+  --gold-deep:#a87d22;
+  --ink:#1c2a23;
+  --gray:#566159;
+  --paper:#ffffff;
+  --cream:#fbf6ea;        /* warm section bg */
+  --cream-deep:#f6eed8;   /* warm section bg, stronger */
+  --line:rgba(12,122,82,.16);
+  --line-gold:rgba(199,154,58,.4);
+  --shadow:0 18px 50px -24px rgba(7,61,42,.4);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Spectral',Georgia,serif;
+  font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{position:relative;z-index:1;max-width:940px;margin:0 auto;padding:0 26px}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;text-align:center;color:#fff;overflow:hidden;
+  background:linear-gradient(155deg,var(--emerald) 0%,var(--green) 42%,var(--forest) 100%);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:64px 24px;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.16;z-index:1;
+  background:
+    radial-gradient(circle at 18% 22%,rgba(255,255,255,.5) 0,transparent 40%),
+    repeating-linear-gradient(115deg,transparent,transparent 26px,rgba(255,255,255,.18) 26px,rgba(255,255,255,.18) 27px);
+}
+/* paint-splatter color accents — nods to the flyer, kept low-key */
+.hero-splatter{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5}
+.hero-splatter::before,.hero-splatter::after{content:"";position:absolute;border-radius:50%;filter:blur(8px)}
+.hero-splatter::before{
+  top:-60px;left:-40px;width:340px;height:340px;
+  background:radial-gradient(circle,rgba(227,181,78,.5),transparent 65%);
+}
+.hero-splatter::after{
+  bottom:-70px;right:-50px;width:380px;height:380px;
+  background:radial-gradient(circle,rgba(21,184,134,.55),transparent 65%);
+}
+.hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
+.hero-crest{
+  width:128px;height:128px;margin:0 auto 22px;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,#ffffff 0%,#f3f9f5 78%,#e6f3ec 100%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 40px -14px rgba(0,0,0,.55),0 0 0 4px rgba(227,181,78,.5),0 0 0 10px rgba(255,255,255,.12);
+}
+.hero-crest img{width:92px;height:auto;display:block}
+.eyebrow{font-family:'Archivo',sans-serif;font-weight:600;letter-spacing:.4em;text-transform:uppercase;font-size:.72rem;color:rgba(255,255,255,.82);margin-bottom:8px}
+.hero-band{
+  font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,5.5vw,3.4rem);
+  line-height:1.02;letter-spacing:-.01em;color:#fff;text-shadow:0 2px 30px rgba(7,61,42,.4);
+}
+.hero-band span{color:var(--gold-bright);font-style:italic;font-weight:600}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 26px;color:var(--gold-bright)}
+.hero-divider::before,.hero-divider::after{content:"";height:1px;width:64px;background:var(--line-gold)}
+.hero-divider span{font-size:.9rem;opacity:.9}
+.hero h1{
+  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.6rem,8vw,5rem);
+  line-height:.98;letter-spacing:-.015em;margin:0 0 10px;text-shadow:0 2px 30px rgba(7,61,42,.35);
+}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--gold-bright);text-shadow:0 2px 24px rgba(168,125,34,.4)}
+.hero .tag{font-style:italic;color:rgba(255,255,255,.85);font-size:1.12rem;margin-bottom:34px;max-width:620px;margin-left:auto;margin-right:auto}
+.hero-meta{
+  display:inline-flex;flex-wrap:wrap;gap:14px 28px;justify-content:center;
+  font-family:'Archivo',sans-serif;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;border-top:1px solid var(--line-gold);border-bottom:1px solid var(--line-gold);
+  padding:16px 4px;
+}
+.hero-meta b{color:var(--gold-bright);font-weight:600;margin-right:6px}
+.hero-cta{
+  display:inline-block;margin-top:34px;font-family:'Archivo',sans-serif;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;color:var(--forest);
+  background:var(--gold-bright);padding:14px 30px;border-radius:40px;text-decoration:none;
+  transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 10px 30px -12px rgba(0,0,0,.5);
+}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(0,0,0,.55)}
+
+/* ============ SECTION SCAFFOLD ============ */
+section{padding:60px 0}
+.sec-label{
+  text-align:center;font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.32em;
+  text-transform:uppercase;font-size:.74rem;color:var(--gold-deep);
+  display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:10px;
+}
+.sec-label::before,.sec-label::after{content:"";height:1px;width:46px;background:var(--gold);opacity:.7}
+.sec-title{text-align:center;font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,4.4vw,2.9rem);color:var(--green-deep);margin-bottom:10px;letter-spacing:-.015em}
+.sec-sub{text-align:center;color:var(--gray);font-style:italic;margin:0 auto 42px;max-width:640px}
+
+/* ============ PROGRAM ============ */
+.director{text-align:center;font-style:italic;color:var(--gray);margin-bottom:46px;font-size:1.08rem}
+.prog-block{margin-bottom:46px}
+.prog-ens{
+  text-align:center;font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  font-size:.94rem;color:var(--gold-deep);display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:14px;
+}
+.prog-ens::before,.prog-ens::after{content:"";height:1px;flex:0 0 44px;background:var(--line-gold)}
+.piece{text-align:center;margin:0 auto 6px;max-width:600px}
+.piece .ttl{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:1.7rem;color:var(--green-deep);line-height:1.2}
+.piece .comp{color:var(--gray);font-size:1.02rem;margin-top:2px}
+
+/* remarks — no cards, just typographic treatment */
+.remark{text-align:center;margin:0 auto;max-width:620px}
+.remark .who{font-family:'Fraunces',serif;font-weight:600;font-size:1.45rem;color:var(--green-deep)}
+.remark .role{font-style:italic;color:var(--gray);font-size:1rem;margin-top:2px}
+
+/* media */
+.audio{margin:18px auto 0;max-width:560px}
+.audio audio{width:100%;height:42px}
+.cap{text-align:center;font-size:.85rem;color:var(--gray);font-style:italic;margin-top:8px}
+
+/* ============ PERSONNEL ============ */
+.personnel{background:var(--cream);border-top:3px solid var(--gold);border-bottom:1px solid var(--line-gold)}
+
+/* warm alternating bands */
+.band-warm{background:var(--green-tint)}
+.band-warm-deep{background:var(--cream-deep);border-top:1px solid var(--line-gold);border-bottom:3px solid var(--gold)}
+.band-warm-deep .eventmusic strong{color:var(--gold-deep)}
+
+/* flyer */
+.flyer-sec{border-top:3px solid var(--gold);border-bottom:1px solid var(--line-gold)}
+.flyer{display:block;max-width:480px;margin:0 auto;border-radius:8px;overflow:hidden;
+  box-shadow:var(--shadow);border:1px solid var(--line-gold);transition:transform .25s ease,box-shadow .25s ease}
+.flyer:hover{transform:translateY(-4px);box-shadow:0 26px 60px -22px rgba(7,61,42,.5)}
+.flyer img{display:block;width:100%;height:auto}
+.ens-name{
+  text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:2rem;color:var(--green-deep);
+  margin:34px 0 30px;padding-bottom:14px;position:relative;letter-spacing:-.01em;
+}
+.ens-name::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:96px;height:4px;background:var(--gold);border-radius:2px}
+.ens-name:first-of-type{margin-top:6px}
+.inst-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;
+  gap:30px 46px;max-width:860px;margin:0 auto;
+}
+.inst{flex:0 1 220px;text-align:center;break-inside:avoid}
+.inst h4{
+  font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.92rem;
+  color:var(--gold-deep);margin-bottom:12px;padding-bottom:8px;position:relative;
+}
+.inst h4::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:42px;height:2px;background:var(--gold);opacity:.8}
+.inst ul{list-style:none}
+.inst li{font-size:.98rem;color:var(--ink);padding:2px 0}
+.inst li .gr{color:var(--gray);font-size:.82rem;font-style:italic}
+@media(max-width:720px){.inst{flex:0 1 200px}}
+@media(max-width:480px){.inst{flex:0 1 100%}}
+
+/* ============ GALLERY ============ */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.ph{
+  border:1.5px dashed var(--gold);background:rgba(255,255,255,.6);border-radius:5px;aspect-ratio:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;color:var(--gray);text-align:center;
+}
+.ph .ic{font-size:1.5rem;opacity:.6;color:var(--gold-deep)}
+.ph .lbl{font-family:'Archivo',sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.ph code{font-family:ui-monospace,monospace;font-size:.7rem;background:rgba(199,154,58,.12);padding:2px 7px;border-radius:3px;color:var(--green-deep)}
+@media(max-width:640px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* event music */
+.eventmusic{text-align:center;max-width:680px;margin:0 auto}
+.eventmusic p{color:var(--gray);margin-top:8px}
+
+/* ============ THANKS ============ */
+.thanks{background:linear-gradient(155deg,var(--green) 0%,var(--forest) 100%);color:#fff}
+.thanks .sec-title{color:#fff}
+.thanks .sec-label{color:var(--gold-bright)}
+.thanks .sec-label::before,.thanks .sec-label::after{background:var(--gold-bright)}
+.thanks-list{max-width:680px;margin:0 auto}
+.thank-row{text-align:center;padding:20px 0;border-bottom:1px solid var(--line-gold)}
+.thank-row:last-child{border-bottom:0}
+.thank-row .nm{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:500;color:#fff}
+.thank-row .nm a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(227,181,78,.45)}
+.thank-row .nm a:hover{border-bottom-color:var(--gold-bright)}
+.thank-row .ttl{font-family:'Archivo',sans-serif;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-bright);margin-top:4px}
+.thank-row .names{color:rgba(255,255,255,.86);margin-top:4px;font-style:italic}
+
+/* MCC grant — full-color logo MUST sit on white per brand guidelines */
+.grant{max-width:600px;margin:46px auto 0;background:#fff;border-radius:6px;padding:34px 30px;text-align:center;box-shadow:var(--shadow)}
+.grant a.logo{display:inline-block;padding:6px}
+.grant img{max-height:74px;width:auto;display:block;margin:0 auto}
+.grant p{font-size:.9rem;color:var(--gray);line-height:1.55;margin-top:20px;font-style:italic}
+.grant p a{color:var(--green);text-decoration:none;border-bottom:1px solid var(--line)}
+
+/* ============ FOOTER ============ */
+footer{text-align:center;padding:44px 24px;background:var(--forest);color:rgba(255,255,255,.6);font-size:.82rem}
+footer .motto{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-bright);font-size:1.1rem;margin-bottom:8px}
+.footer-crest{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:radial-gradient(circle at 50% 42%,#fff,#e6f3ec);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(227,181,78,.45)}
+.footer-crest img{width:46px;height:auto}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-splatter" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-crest"><img src="images/eagle-logo.png" alt="STEM Middle Academy eagle crest"></div>
+    <div class="eyebrow">Presents · Spring 2026</div>
+    <div class="hero-band">STEM Middle Academy<br><span>Band</span></div>
+    <div class="hero-divider"><span>★</span></div>
+    <div class="eyebrow" style="margin-bottom:6px">The STEM Collage · Spring Exposition &amp; Concert</div>
+    <h1>Spring <em>Collage</em> Concert</h1>
+    <p class="tag">An evening of music, art, science, ELA, and student work across the school</p>
+    <div class="hero-meta">
+      <span><b>Date</b> Thursday, June 4, 2026</span>
+      <span><b>Event</b> 6:00–8:00 PM</span>
+      <span><b>Band Performance</b> 7:00–7:30 PM</span>
+      <span><b>Where</b> Outdoor Amphitheater</span>
+    </div>
+    <a class="hero-cta" href="#program">View the Program ↓</a>
+  </div>
+</header>
+
+<!-- ============ FLYER ============ -->
+<section class="band-warm flyer-sec">
+ <div class="wrap">
+  <div class="sec-label reveal">You're Invited</div>
+  <h2 class="sec-title reveal">The Collage Concert Flyer</h2>
+  <p class="sec-sub reveal">Share the date — tap the flyer to open it full size.</p>
+  <a class="flyer reveal" href="images/flyer.jpg" target="_blank" rel="noopener">
+    <img src="images/flyer.jpg" alt="STEM Collage — Spring Exposition &amp; Concert flyer, Thursday June 4, 2026, 6:00–8:00 PM at STEM Middle Academy, 60 Alton St., Springfield, MA. Music performance 7:00–7:30 PM at the outdoor amphitheater.">
+  </a>
+ </div>
+</section>
+
+<!-- ============ PROGRAM ============ -->
+<section class="wrap" id="program">
+  <div class="sec-label reveal">The Program</div>
+  <h2 class="sec-title reveal">Order of Performance</h2>
+  <p class="director reveal">Gary Lee Burgess II · Director of Music</p>
+
+  <div class="prog-block reveal">
+    <div class="prog-ens">Opening Remarks</div>
+    <div class="remark">
+      <div class="who">Ms. Andrea Williams</div>
+      <div class="role">Principal, STEM Middle Academy</div>
+    </div>
+  </div>
+
+  <div class="prog-block reveal">
+    <div class="prog-ens">6th Grade Beginner Band</div>
+    <div class="piece">
+      <div class="ttl">Miles Ahead</div>
+      <div class="comp">Jay Taylor</div>
+    </div>
+  </div>
+
+  <div class="prog-block reveal">
+    <div class="prog-ens">Remarks</div>
+    <div class="remark">
+      <div class="who">Ms. Amy Silva</div>
+      <div class="role">Art Teacher, STEM Middle Academy</div>
+    </div>
+    <div class="remark" style="margin-top:18px">
+      <div class="who">Mr. Lee Burgess</div>
+      <div class="role">Director of Music, STEM Middle Academy</div>
+    </div>
+  </div>
+
+  <div class="prog-block reveal">
+    <div class="prog-ens">STEM Wind Ensemble</div>
+    <div class="piece">
+      <div class="ttl">Celtic Air and Dance</div>
+      <div class="comp">Michael Sweeney</div>
+    </div>
+    <div class="piece" style="margin-top:26px">
+      <div class="ttl">Arabian Dances</div>
+      <div class="comp">Brian Balmages</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONNEL ============ -->
+<section class="personnel">
+  <div class="wrap">
+    <div class="sec-label reveal">Personnel</div>
+    <h2 class="sec-title reveal">Our Musicians</h2>
+
+    <div class="reveal">
+      <div class="ens-name">6th Grade Beginner Band</div>
+      <div class="inst-grid" id="band6"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="ens-name" style="margin-top:50px">STEM Wind Ensemble</div>
+      <div class="inst-grid" id="wind"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="band-warm">
+ <div class="wrap">
+  <div class="sec-label reveal">Our Year</div>
+  <h2 class="sec-title reveal">Moments from the Band Room</h2>
+  <p class="sec-sub reveal">Drop photos into the <code>images/</code> folder and replace each placeholder below.</p>
+  <div class="gallery reveal">
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 1</span><code>images/year-01.jpg</code></div>
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 2</span><code>images/year-02.jpg</code></div>
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 3</span><code>images/year-03.jpg</code></div>
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 4</span><code>images/year-04.jpg</code></div>
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 5</span><code>images/year-05.jpg</code></div>
+    <div class="ph"><span class="ic">▣</span><span class="lbl">Photo 6</span><code>images/year-06.jpg</code></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ EVENT MUSIC ============ -->
+<section class="band-warm-deep">
+ <div class="wrap">
+  <div class="eventmusic reveal">
+    <div class="sec-label">Event Music</div>
+    <h2 class="sec-title" style="font-size:1.7rem">Composed by Our Students</h2>
+    <p>Music heard throughout the Collage this evening was composed and produced by students of the <strong>8th&nbsp;Grade Music Technology Studios</strong>.</p>
+    <!-- Music Tech tracks. Drop mp3s into audio/ and they play here.
+         (A Google Drive *folder* link can't stream on a web page — use repo files or per-file Drive /preview embeds.) -->
+    <div class="audio"><audio controls preload="none" src="audio/musictech-01.mp3"></audio></div>
+    <p class="cap">Student Composition 1</p>
+    <div class="audio" style="margin-top:22px"><audio controls preload="none" src="audio/musictech-02.mp3"></audio></div>
+    <p class="cap">Student Composition 2</p>
+    <div class="audio" style="margin-top:22px"><audio controls preload="none" src="audio/musictech-03.mp3"></audio></div>
+    <p class="cap">Student Composition 3</p>
+  </div>
+ </div>
+</section>
+
+<!-- ============ SPECIAL THANKS ============ -->
+<section class="thanks">
+  <div class="wrap">
+    <div class="sec-label reveal">With Gratitude</div>
+    <h2 class="sec-title reveal">Special Thanks</h2>
+    <div class="thanks-list">
+      <div class="thank-row reveal">
+        <div class="nm">Superintendent Sonia Dinall</div>
+        <div class="ttl">Springfield Public Schools</div>
+      </div>
+      <div class="thank-row reveal">
+        <div class="nm">Mr. Gary Bernice</div>
+        <div class="ttl">SPS Visual &amp; Performing Arts, Supervisor</div>
+      </div>
+      <div class="thank-row reveal">
+        <div class="nm">SciTech High School Band</div>
+        <div class="ttl">For Their Continued Partnership</div>
+        <div class="names">Ms. Charlotte Walsh · Mr. Anthony Diaz · Ms. Alisha Lopez-Marrero</div>
+      </div>
+      <div class="thank-row reveal">
+        <div class="nm"><a href="https://www.communitymusicschool.com/" target="_blank" rel="noopener">Community Music School of Springfield</a></div>
+        <div class="ttl">Partner in Music Education</div>
+        <div class="names">Ms. Carolyn Dufrane</div>
+      </div>
+    </div>
+
+    <!-- MCC full-color logo on WHITE per brand guidelines; linked, with required credit line -->
+    <div class="grant reveal">
+      <a class="logo" href="https://massculturalcouncil.org/" target="_blank" rel="noopener">
+        <img src="images/mcc-logo.jpg" alt="Mass Cultural Council">
+      </a>
+      <p>This program is supported in part by a grant from the <a href="https://massculturalcouncil.org/" target="_blank" rel="noopener">Mass Cultural Council</a>, a state agency, through its STARS Residencies program.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-crest"><img src="images/eagle-logo.png" alt=""></div>
+  <div class="motto">Music · Community · Excellence</div>
+  <div>STEM Middle Academy Band · 60 Alton Street, Springfield, MA 01109</div>
+</footer>
+
+<script>
+// ===== INSTRUMENTATION (from director's personnel sheets) =====
+// 6th Grade Beginner Band — order per sheet
+const band6 = [
+  ["Flute", [["Melany Gutierrez Perez"]]],
+  ["Bassoon", [["Kathleen Lin-Weinheimer"]]],
+  ["B\u266D Clarinet", [["Bernardo Peralta Lozada"],["Fatuma Ahmed"],["Joi Smith"],["Joshua Santiago"],["Khale Redding"],["Mya Swasey"],["Natanael Ruiz Diaz"],["Nehemiah Semprit"],["Pihu Patel"],["Serenity Perez"],["Sharilyn Rudd"],["Yael Pastrana Rodriguez"],["Yariel Castillo Cruz"]]],
+  ["Alto Saxophone", [["Aalexander Oquendo"],["Amayah Maddox"],["Ariella Luna"],["Dylan Cordero-Laboy"],["Jasmine Velasquez"],["Lola Dickey"],["Penuel Thapa"],["Zianely Lopez"]]],
+  ["Tenor Saxophone", [["Naraj Sunar"]]],
+  ["Trumpet", [["Alexander Bousquet"],["Edynn Rufino"],["Janiel Fernandez"],["John Lopez Mejia"],["Leijaniz Rodriguez"],["Liam O'Connell"],["Mina Zian"]]],
+  ["Trombone", [["Bibi Timori"],["Derek Marrero Olivo"]]],
+  ["Tuba", [["Edrian Davila"],["Joshua Torres Jr"]]],
+  ["Percussion", [["Carter Sims-Gamble"],["Neyliann Henderson-Maldonado"],["Rubyrose Burney-Nash"],["Sophia Feliciano"]]],
+];
+
+// STEM Wind Ensemble — grades from sheet (7/8)
+const wind = [
+  ["Flute", [["Nyesha Allende","7"],["Hadija Arbow","7"],["Eboni Cox","8"],["Johndiel Fernandez","7"],["Anastasia Fountaine","7"],["Nevaeh Fraichard-Sanchez","8"],["Mikaela Malave","8"],["Lailah Martinez-Gedeon","7"]]],
+  ["B\u266D Clarinet", [["Ricardo Edwards","7"],["Farha Grant","7"],["Emily Latney","8"],["Jariah Roches","7"],["Jezariah Roches","8"],["Adrielyz Santiago Ramos","7"],["Ahmeir Williams","7"],["Jehvon Williams","7"]]],
+  ["Bass Clarinet", [["Justin Becker","7"],["Keylianis Santiago","8"]]],
+  ["Alto Saxophone", [["Keyshawn Davis","7"],["Eddie Gonzalez Morales","7"]]],
+  ["Tenor Saxophone", [["Jacob Navarro Gonzalez","7"]]],
+  ["Trumpet", [["Christian Colon","8"],["Eli Delgado","7"],["Richa Khanal","7"],["Jailyn Marte","8"],["Messiah Montanez","8"]]],
+  ["Trombone", [["Khrizpaul Horta Rodriguez","7"],["Pedro Mateo","7"],["Rafael Rivera Cardona","7"],["Sonu Tamang","8"]]],
+  ["Euphonium", [["Danika Robinson","7"],["Dhlyan Rodriguez Vazquez","7"]]],
+  ["Tuba", [["Yanelis Mejia Cruz","8"]]],
+  ["Percussion", [["Ramsey Cohill","8"],["Lance Ferguson","7"],["Brianna Mcdonald","8"],["Joao Pedro De Sa Nascimento","8"],["Michael Ramos","8"],["Kaylen Rosa","7"]]],
+];
+
+function renderEnsemble(elId, data, showGrade){
+  const el = document.getElementById(elId);
+  el.innerHTML = data.map(([inst, players]) => {
+    const lis = players.map(p => {
+      const name = p[0];
+      const gr = (showGrade && p[1]) ? ` <span class="gr">· ${p[1]}</span>` : "";
+      return `<li>${name}${gr}</li>`;
+    }).join("");
+    return `<div class="inst"><h4>${inst}</h4><ul>${lis}</ul></div>`;
+  }).join("");
+}
+renderEnsemble("band6", band6, false);
+renderEnsemble("wind", wind, true);
+
+// reveals
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
